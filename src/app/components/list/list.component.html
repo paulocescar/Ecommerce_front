@@ -1,0 +1,33 @@
+<div class="list-group">
+  <button class="btn btn-info btn-block list-group-item list-group-item-action" data-bs-toggle="collapse"
+    href="#multiCollapseProdutos" role="button" aria-expanded="true" aria-controls="multiCollapseProdutos" routerLinkActive="active">
+    Produtos
+  </button>
+
+  <div class="row">
+    <div class="collapse multi-collapse {{menuitem == 'produtos' ? 'show' : ''}}" id="multiCollapseProdutos">
+      <button class="btn btn-info btn-block list-group-item list-group-item-action"(click)="selectMenu('produtos')"  routerLink="/admin/main/products"
+        routerLinkActive="active">
+        Produtos
+      </button>
+    </div>
+  </div>
+
+  <button class="btn btn-info btn-block list-group-item list-group-item-action" data-bs-toggle="collapse"
+    href="#multiCollapsePedidos" role="button" aria-expanded="true" aria-controls="multiCollapsePedidos" routerLinkActive="active">
+    Pedidos
+  </button>
+
+  <div class="row">
+    <div class="collapse multi-collapse {{menuitem == 'pedidos' ? 'show' : ''}}" id="multiCollapsePedidos">
+      <button class="btn btn-info btn-block list-group-item list-group-item-action"(click)="selectMenu('pedidos')"  routerLink="/admin/main/orders"
+        routerLinkActive="active">
+        Pedidos
+      </button>
+    </div>
+  </div>
+
+  <button class="btn btn-danger btn-block list-group-item list-group-item-action" (click)="logout()">
+    Logout
+  </button>
+</div>

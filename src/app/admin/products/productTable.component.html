@@ -1,0 +1,22 @@
+<app-top-pages title="Produtos" description="Seus produtos estão todos aqui" icon="fa-regular fa-file"></app-top-pages>
+<div class="form-control">
+    <table class="table table-hover text-dark">
+        <thead>
+            <th>#</th>
+            <th>Descrição</th>
+            <th>Categoria</th>
+            <th>Preço</th>
+            <th>Ações</th>
+        </thead>
+        <tbody>
+            <ng-template ngFor let-product [ngForOf]="getProducts()">
+                <tr>
+                    <td>#{{product.id}}</td>
+                    <td>{{product.descricao}}</td>
+                    <td>{{product.categoria_id}}</td>
+                    <td>{{product.preco | currency:"BRL":"symbol":"2.2-2" }}</td>
+                </tr>
+            </ng-template>
+        </tbody>
+    </table>
+</div>

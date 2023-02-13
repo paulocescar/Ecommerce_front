@@ -1,0 +1,13 @@
+.search-form input, button{
+    height: 35px!important;
+}
+
+.search-form input, button i{
+    margin-top:0px;
+    padding: 0px;
+}
+
+i {
+    padding: 20px;
+    cursor: pointer;
+}

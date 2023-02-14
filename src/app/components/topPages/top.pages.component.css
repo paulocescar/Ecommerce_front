@@ -5,16 +5,19 @@ body{
     width: 100%;
     margin-left: -24px;
     box-sizing: border-box;
-    height: 30%;
+    height: 25%;
     position: absolute;
     z-index: -1;
 }
-.mb-10{
-    margin-bottom: 120px;
+.mb-7{
+    margin-bottom: 30px;
 }
 h2{
     margin-top: 15px;
 }
 .mt1{
-    margin-top: -40px;
+    margin-top: -50px;
+}
+.p-absolute{
+    position: absolute;
 }

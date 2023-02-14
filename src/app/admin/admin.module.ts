@@ -7,6 +7,8 @@ import { AdminComponent } from "./admin.component";
 import { AuthGuard } from "./auth.guard";
 import { ProductTableComponent } from "./products/productTable.component";
 import { ProductEditorComponent } from "./products/productEditor.component";
+import { CategoryTableComponent } from "./categories/categoryTable.component";
+import { CategoryEditorComponent } from "./categories/categoryEditor.component";
 import { OrderTableComponent } from "./orderTable.component";
 import { NavbarComponent } from "../components/navbar/navbar.component";
 import { ListComponent } from "../components/list/list.component";
@@ -20,6 +22,9 @@ let routing = RouterModule.forChild([
             { path: "products/:mode/:id", component: ProductEditorComponent },
             { path: "products/:mode", component: ProductEditorComponent },
             { path: "products", component: ProductTableComponent },
+            { path: "categories/:mode/:id", component: CategoryEditorComponent },
+            { path: "categories/:mode", component: CategoryEditorComponent },
+            { path: "categories", component: CategoryTableComponent },
             { path: "orders", component: OrderTableComponent },
             { path: "**", redirectTo: "products" }
         ]
@@ -35,6 +40,8 @@ let routing = RouterModule.forChild([
         AdminComponent, 
         ProductTableComponent, 
         ProductEditorComponent, 
+        CategoryTableComponent,
+        CategoryEditorComponent,
         OrderTableComponent, 
         NavbarComponent,
         ListComponent,

@@ -1,4 +1,4 @@
-<div class="list-group">
+<div class="list-group sidenav-menu">
   <button class="btn btn-info btn-block list-group-item list-group-item-action" data-bs-toggle="collapse"
     href="#multiCollapseProdutos" role="button" aria-expanded="true" aria-controls="multiCollapseProdutos" routerLinkActive="active">
     Produtos
@@ -10,6 +10,10 @@
         routerLinkActive="active">
         Produtos
       </button>
+      <button class="btn btn-info btn-block list-group-item list-group-item-action" (click)="selectMenu('produtos')" routerLink="/admin/main/categories"
+        routerLinkActive="active">
+        Categorias
+      </button>
     </div>
   </div>
 
@@ -20,7 +24,7 @@
 
   <div class="row">
     <div class="collapse multi-collapse {{menuitem == 'pedidos' ? 'show' : ''}}" id="multiCollapsePedidos">
-      <button class="btn btn-info btn-block list-group-item list-group-item-action"(click)="selectMenu('pedidos')"  routerLink="/admin/main/orders"
+      <button class="btn btn-info btn-block list-group-item list-group-item-action" (click)="selectMenu('pedidos')"  routerLink="/admin/main/orders"
         routerLinkActive="active">
         Pedidos
       </button>

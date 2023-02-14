@@ -1,0 +1,16 @@
+<app-top-pages title="{{editing ? 'Editar' : 'Adicionar'}} Categoria" description="Seus categorias estão todos aqui" icon="fa-solid fa-list"
+    route=""></app-top-pages>
+<div class="form-control card-shadow">
+    <form novalidate #form="ngForm" (ngSubmit)="save(form)">
+        <div class="form-group">
+            <label>Description</label>
+            <input class="form-control" name="descricao" [(ngModel)]="category.descricao"/>
+        </div>
+        <button type="submit" class="btn btn-success" [class.btn-warning]="editing">
+            {{editing ? "Salvar" : "Adicionar"}}
+        </button>
+        <button type="reset" class="btn btn-secondary" routerLink="/admin/main/categories">
+            Cancel
+        </button>
+    </form>
+</div>

@@ -1,5 +1,5 @@
-<app-top-pages title="Produtos" description="Seus produtos estão todos aqui" icon="fa-regular fa-file"></app-top-pages>
-<div class="form-control">
+<app-top-pages title="Produtos" description="Seus produtos estão todos aqui" icon="fa-regular fa-file" route="/admin/main/products/save"></app-top-pages>
+<div class="form-control card-shadow">
     <table class="table table-hover text-dark">
         <thead>
             <th>#</th>
@@ -13,8 +13,9 @@
                 <tr>
                     <td>#{{product.id}}</td>
                     <td>{{product.descricao}}</td>
-                    <td>{{product.categoria_id}}</td>
+                    <td>{{product.categoria ? product.categoria.descricao : product.categoria_id}}</td>
                     <td>{{product.preco | currency:"BRL":"symbol":"2.2-2" }}</td>
+                    <td></td>
                 </tr>
             </ng-template>
         </tbody>

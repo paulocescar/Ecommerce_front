@@ -28,16 +28,12 @@ export class ProductRepository {
         });
     }
 
-    getProducts(categoria_id: number | undefined): Product[] {
+    getProducts(categoria_id?: number | null): Product[] {
         if (!categoria_id)
             return this.products
 
         return this.products
             .filter(p => categoria_id == p.categoria_id);
-    }
-
-    getAllProducts(): Product[] {
-        return this.products;
     }
     
     getProduct(id: number): Product {

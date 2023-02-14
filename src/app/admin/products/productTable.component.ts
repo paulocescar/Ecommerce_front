@@ -19,6 +19,6 @@ export class ProductTableComponent {
     }
     
     getProducts() {
-        return this.repository.getAllProducts();
+        return this.repository.getProducts();
     }
 }

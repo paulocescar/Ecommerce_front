@@ -1,1 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
+.float-right{
+    float:right;
+}
+.float-left{
+    float: left;
+}
+.card-shadow{
+    box-shadow: 0 0.15rem 1.75rem #21283226;
+}
+.sidenav-menu {
+    flex-direction: column;
+    flex-wrap: nowrap;
+}

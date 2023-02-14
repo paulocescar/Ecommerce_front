@@ -13,8 +13,8 @@ export class TokenService {
     this.token = storedToken;
   }
 
-  getToken(): string | null {
+  getToken(): string | "" {
     const storedToken = sessionStorage.getItem('token');  
-    return storedToken ? storedToken : null;
+    return storedToken ? storedToken : "";
   }
 }

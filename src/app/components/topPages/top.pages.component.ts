@@ -11,5 +11,6 @@ export class TopPagesComponent {
     @Input() title:string = "";
     @Input() description:string = "";
     @Input() icon:string = "";
+    @Input() route: string = "";
     
 }

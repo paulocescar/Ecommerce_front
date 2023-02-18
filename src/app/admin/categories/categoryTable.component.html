@@ -12,7 +12,7 @@
                 <tr>
                     <td>#{{category.id}}</td>
                     <td>{{category.descricao}}</td>
-                    <td>{{category.idCategoriaPai}}</td>
+                    <td>{{category.categoria_pai ? category.categoria_pai.descricao : category.idCategoriaPai }}</td>
                     <td>
                         <a class="btn btn-secondary" routerLink="/admin/main/categories/edit/{{category.id}}"><i class="fa fa-pencil"></i></a>
                         <a class="btn btn-danger" (click)='deleteCategories(category.id ? category.id : 0)'><i class="fa fa-trash"></i></a>

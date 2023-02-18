@@ -23,8 +23,13 @@ export class CategoryEditorComponent {
                 repository.getCategories(activeRoute.snapshot.params["id"]));
         }
     }
+    
     save(form: NgForm) {
         this.repository.saveCategories(this.category);
         this.router.navigateByUrl("/admin/main/categories");
+    }
+
+    getCategories() {
+        return this.repository.getCategories();
     }
 }

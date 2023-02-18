@@ -24,15 +24,16 @@ export class CategoriesRepository {
     }
 
     saveCategories(category: Category) {
+
+        let categoria = new Category;
+        categoria.id = category.id
+        categoria.descricao = category.descricao
+        categoria.idCategoriaPai = Number(category.idCategoriaPai)
+
         if (category.id == null || category.id == 0) {
-            this.categoriesService.saveCategories(category)
+            this.categoriesService.saveCategories(categoria)
                 .subscribe(cat => this.categories.push(cat));
         } else {
-            let categoria = new Category;
-            categoria.id = category.id
-            categoria.descricao = category.descricao
-            categoria.idCategoriaPai = category.idCategoriaPai
-
             this.categoriesService.updateCategories(categoria)
                 .subscribe(p => {
                     this.categories.splice(this.categories.

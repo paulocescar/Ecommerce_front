@@ -10,14 +10,12 @@ export class CategoriesService {
     public auth_token: string = "";
     public headers = {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.auth_token}`
+        'Authorization': `Bearer ${this.tokenService.getToken()}`
     }
 
     constructor(private http: HttpClient,
         private tokenService:TokenService) 
-    { 
-        this.auth_token = this.tokenService.getToken();
-    }
+    {   }
 
     getCategories(): Observable<Category> {
         return this.http.get(environment.urlApi+'/categories');

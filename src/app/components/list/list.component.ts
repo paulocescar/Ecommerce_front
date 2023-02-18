@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { Router } from "@angular/router";
 import { AuthService } from "../../services/auth.service";
+import { TokenService } from "src/app/admin/token.service";
 
 @Component({
     selector: "app-list",
@@ -10,7 +11,7 @@ import { AuthService } from "../../services/auth.service";
 export class ListComponent {
     menuitem: string = 'produtos';
 
-    constructor(private auth: AuthService,
+    constructor(private auth: AuthService, private token: TokenService,
         private router: Router) { }
 
     ngOnInit() {
@@ -20,7 +21,7 @@ export class ListComponent {
         this.menuitem = item
     }
     logout() {
-        this.auth.clear();
+        this.token.clearToken();
         this.router.navigateByUrl("/");
     }
 }

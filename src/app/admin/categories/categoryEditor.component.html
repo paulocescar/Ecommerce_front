@@ -8,10 +8,10 @@
         </div>
         <div class="form-group">
             <label>Categoria Pai</label>
-            <select class="form-control" name="descricao" [(ngModel)]="category.idCategoriaPai">
+            <select class="form-control" name="idCategoriaPai" [(ngModel)]="category.idCategoriaPai">
                 <option value="">Selecione</option>
-                <ng-template ngFor let-category [ngForOf]="getCategories()">
-                    <option value="{{category.id}}">{{category.descricao}}</option>
+                <ng-template ngFor let-categorie [ngForOf]="getCategories()">
+                    <option value="{{categorie.id}}">{{categorie.descricao}}</option>
                 </ng-template>
             </select>
         </div>

@@ -17,4 +17,9 @@ export class TokenService {
     const storedToken = sessionStorage.getItem('token');  
     return storedToken ? storedToken : "";
   }
+
+
+  clearToken(): void {
+    // sessionStorage.removeItem('token');  
+  }
 }

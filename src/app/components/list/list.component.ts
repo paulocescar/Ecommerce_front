@@ -10,12 +10,14 @@ import { TokenService } from "src/app/admin/token.service";
 })
 export class ListComponent {
     menuitem: string = 'produtos';
-
+    chevron: string = '';
     constructor(private auth: AuthService, private token: TokenService,
         private router: Router) { }
 
     ngOnInit() {
         this.menuitem = 'produtos'
+        this.chevron = this.menuitem == 'produtos' ? 'fa fa-chevron-down' : 'fa fa-chevron-up'
+        
     }
     selectMenu(item: string){
         this.menuitem = item

@@ -20,6 +20,6 @@ export class TokenService {
 
 
   clearToken(): void {
-    // sessionStorage.removeItem('token');  
+    sessionStorage.removeItem('token');  
   }
 }

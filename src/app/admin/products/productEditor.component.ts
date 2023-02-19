@@ -3,6 +3,8 @@ import { Router, ActivatedRoute } from "@angular/router";
 import { NgForm } from "@angular/forms";
 import { Product } from "../../model/product.model";
 import { ProductRepository } from "../../model/product.repository";
+import { Category } from "../../model/categories.model";
+import { CategoriesRepository } from "../../model/categories.repository";
 
 @Component({
     templateUrl: "productEditor.component.html"
@@ -12,6 +14,7 @@ export class ProductEditorComponent {
     editing: boolean = false;
     product: Product = new Product();
     constructor(private repository: ProductRepository,
+        private categoryRepository: CategoriesRepository,
         private router: Router,
         activeRoute: ActivatedRoute) {
         this.editing = activeRoute.snapshot.params["mode"] == "edit";
@@ -20,8 +23,13 @@ export class ProductEditorComponent {
                 repository.getProduct(activeRoute.snapshot.params["id"]));
         }
     }
+
     save(form: NgForm) {
         this.repository.saveProduct(this.product);
         this.router.navigateByUrl("/admin/main/products");
+    }
+
+    getCategories() {
+        return this.categoryRepository.getCategories();
     }
 }

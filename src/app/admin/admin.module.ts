@@ -5,6 +5,7 @@ import { RouterModule } from "@angular/router";
 import { AuthComponent } from "./auth.component";
 import { AdminComponent } from "./admin.component";
 import { AuthGuard } from "./auth.guard";
+import { DashboardComponent } from "./dashboard.component";
 import { ProductTableComponent } from "./products/productTable.component";
 import { ProductEditorComponent } from "./products/productEditor.component";
 import { CategoryTableComponent } from "./categories/categoryTable.component";
@@ -19,6 +20,7 @@ let routing = RouterModule.forChild([
     {
         path: "main", component: AdminComponent, canActivate: [AuthGuard],
         children: [
+            { path: "home", component: DashboardComponent },
             { path: "products/:mode/:id", component: ProductEditorComponent },
             { path: "products/:mode", component: ProductEditorComponent },
             { path: "products", component: ProductTableComponent },

@@ -1,0 +1,48 @@
+.c-pointer{
+    cursor: pointer;
+}
+li a {
+    color: black;
+    font-size: 14px;
+}
+
+.sidebar {
+    position: fixed;
+    top: 81px;
+    bottom: 0;
+    left: 0;
+    z-index: 100;
+    padding: 15px 0 40px 0;
+    box-shadow: inset -1px 0 0 rgb(0 0 0 / 10%);
+    overflow-y: scroll;
+}
+@media (min-width: 768px){
+    .d-md-block {
+        display: block!important;
+    }
+    .d-none {
+        display: block  !important;
+    }
+    .bg-light {
+        background-color: #f8f9fa!important;
+    }
+}
+@media (min-width: 768px){
+    .col-md-2 {
+        -ms-flex: 0 0 16.666667%;
+        flex: 0 0 16.666667%;
+        max-width: 16.666667%;
+    }
+}
+
+@media (max-width: 525px){
+    .d-md-block {
+        display: none!important;
+    }
+    .d-none {
+        display: none!important;
+    }
+    .bg-light {
+        background-color: #f8f9fa!important;
+    }
+}

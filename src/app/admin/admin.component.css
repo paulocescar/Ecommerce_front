@@ -1,0 +1,11 @@
+.right-component{
+  padding-right: 30px;
+  margin-top: 70px;
+  z-index: 1;
+  background-color: #eee!important;
+}
+html , body{
+    overflow-x: hidden;
+    width: 100%!important;
+    background-color: #eee;
+  }

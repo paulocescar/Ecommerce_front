@@ -12,3 +12,9 @@
     flex-direction: column;
     flex-wrap: nowrap;
 }
+
+html , body{
+    overflow-x: hidden;
+    width: 100%!important;
+    background-color: #eee;
+  }

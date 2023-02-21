@@ -1,4 +1,5 @@
 import { Category } from "./categories.model";
+import { ProductImage } from "./product-images.model";
 
 export class Product {
         constructor(
@@ -8,8 +9,8 @@ export class Product {
                 public tipo?: string,
                 public situacao?: string,
                 public slug?: string,
-                public unidade?: string,
-                public preco?: number,
+                public unidade?: number,
+                public preco?: any,
                 public precoCusto?: string,
                 public descricaoCurta?: string,
                 public descricaoComplementar?: string,
@@ -51,5 +52,6 @@ export class Product {
                 public spedTipoItem?: string,
                 public categoria_id?: number,
                 public categoria?: Category,
+                public images?: ProductImage[]
         ) { }
     }

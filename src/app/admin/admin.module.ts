@@ -14,6 +14,7 @@ import { OrderTableComponent } from "./orderTable.component";
 import { NavbarComponent } from "../components/navbar/navbar.component";
 import { ListComponent } from "../components/list/list.component";
 import { TopPagesComponent } from "../components/topPages/top.pages.component";
+import { ProductImagesComponent } from "./products/productImages/productImages.component";
 
 let routing = RouterModule.forChild([
     { path: "auth", component: AuthComponent },
@@ -47,7 +48,8 @@ let routing = RouterModule.forChild([
         OrderTableComponent, 
         NavbarComponent,
         ListComponent,
-        TopPagesComponent
+        TopPagesComponent,
+        ProductImagesComponent
     ]
 })
 export class AdminModule { }

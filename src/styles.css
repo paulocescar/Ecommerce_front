@@ -12,7 +12,12 @@
     flex-direction: column;
     flex-wrap: nowrap;
 }
-
+.c-pointer{
+    cursor: pointer;
+}
+.float-right{
+    float: right;
+}
 html , body{
     overflow-x: hidden;
     width: 100%!important;

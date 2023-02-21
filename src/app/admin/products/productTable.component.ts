@@ -21,4 +21,8 @@ export class ProductTableComponent {
     getProducts() {
         return this.repository.getProducts();
     }
+
+    deleteProducts(id: Number){
+        return 
+    }
 }

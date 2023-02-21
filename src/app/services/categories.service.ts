@@ -7,11 +7,6 @@ import { Category } from '../model/categories.model'
 
 @Injectable()
 export class CategoriesService {
-    public auth_token: string = "";
-    public headers = {
-        'Content-Type': 'application/json',
-        'Authorization': `Bearer ${this.tokenService.getToken()}`
-    }
 
     constructor(private http: HttpClient,
         private tokenService:TokenService) 
@@ -22,14 +17,20 @@ export class CategoriesService {
     }
 
     saveCategories(data: Category): Observable<Category> {
-        return this.http.post(environment.urlApi+'/categories', data, {headers: this.headers})
+        return this.http.post(environment.urlApi+'/categories', data, {
+            headers: this.tokenService.getHeaders()
+        })
     }
 
     updateCategories(data: Category): Observable<Category> {
-        return this.http.put(environment.urlApi+`/categories/${data.id}`, data, {headers: this.headers})
+        return this.http.put(environment.urlApi+`/categories/${data.id}`, data, {
+            headers: this.tokenService.getHeaders()
+        })
     }
 
     deleteCategories(id: Number): Observable<Category> {
-        return this.http.delete(environment.urlApi+`/categories/${id}`, {headers: this.headers})
+        return this.http.delete(environment.urlApi+`/categories/${id}`, {
+            headers: this.tokenService.getHeaders()
+        })
     }
 }

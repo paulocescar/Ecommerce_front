@@ -22,7 +22,25 @@
         </div>
         <div class="form-group">
             <label>Preço</label>
-            <input class="form-control" name="preco" [(ngModel)]="product.preco" />
+            <input class="form-control" name="preco" [(ngModel)]="product.preco" inputmode="numeric"/>
+        </div>
+        <div class="form-group">
+            <label>Quantidade</label>
+            <input class="form-control" name="unidade" [(ngModel)]="product.unidade" />
+        </div>
+        <div class="form-group m-1">
+            <div class="row">
+                <div class="col-11">
+                    <label>Imagens</label>
+                </div>
+                <div class="col-1">
+                    <i class="fa-regular fa-plus c-pointer float-right" (click)="addImage()"></i>
+                </div>
+            </div>
+            <div *ngFor="let image of product.images; index as i">
+                <app-productImages [imageComponent]="images[i]" (onAlert)="alerta($event)">
+                </app-productImages>
+            </div>
         </div>
         <button type="submit" class="btn btn-success" [class.btn-warning]="editing">
             {{editing ? "Salvar" : "Adicionar"}}

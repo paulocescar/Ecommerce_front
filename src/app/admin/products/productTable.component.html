@@ -15,7 +15,10 @@
                     <td>{{product.descricao}}</td>
                     <td>{{product.categoria ? product.categoria.descricao : product.categoria_id}}</td>
                     <td>{{product.preco | currency:"BRL":"symbol":"2.2-2" }}</td>
-                    <td></td>
+                    <td>
+                        <a class="btn btn-secondary" routerLink="/admin/main/products/edit/{{product.id}}"><i class="fa fa-pencil"></i></a>
+                        <a class="btn btn-danger" (click)='deleteProducts(product.id ? product.id : 0)'><i class="fa fa-trash"></i></a>
+                    </td>
                 </tr>
             </ng-template>
         </tbody>

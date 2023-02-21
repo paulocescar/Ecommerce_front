@@ -18,8 +18,15 @@ export class TokenService {
     return storedToken ? storedToken : "";
   }
 
-
   clearToken(): void {
     sessionStorage.removeItem('token');  
+  }
+
+  getHeaders(): any {
+    const storedToken = sessionStorage.getItem('token'); 
+    return {
+      'Content-Type': 'application/json',
+      'Authorization': `Bearer ${storedToken}`
+    }
   }
 }

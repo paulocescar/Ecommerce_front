@@ -1,4 +1,5 @@
 import { Injectable } from "@angular/core";
+import { CartService } from "../services/cart.service";
 import { Product } from "./product.model";
 @Injectable()
 export class Cart {
@@ -6,21 +7,32 @@ export class Cart {
     public itemCount: number = 0;
     public cartPrice: number = 0;
 
-    addLine(product: Product, quantity: number = 1) {
+    constructor(private cartService:CartService){
+        cartService.getCart().subscribe((data: any) => {
+            if(data){
+                for(let item of data){
+                    console.log(data)
+                    item.produto[0].quantidade = item.quantidade;
+                    this.addLine(item.produto[0])
+                }
+            }
+        })
+    }
+
+    addLine(product: Product, quantidade: number = 1) {
         let line = this.lines.find(line => line.product.id == product.id);
         if (line != undefined) {
-            line.quantity += quantity;
+            line.quantidade += quantidade;
         } else {
-            this.lines.push(new CartLine(product, quantity));
+            this.lines.push(new CartLine(product, quantidade));
         }
         this.recalculate();
     }
 
-    updateQuantity(product: Product, quantity: number) {
-        console.log(quantity)
+    updateQuantity(product: Product, quantidade: number) {
         let line = this.lines.find(line => line.product.id == product.id);
         if (line != undefined) {
-            line.quantity = Number(quantity);
+            line.quantidade = Number(quantidade);
         }
         this.recalculate();
     }
@@ -41,16 +53,25 @@ export class Cart {
         this.itemCount = 0;
         this.cartPrice = 0;
         this.lines.forEach((l:any) => {
-            this.itemCount += l.quantity;
-            this.cartPrice += (l.quantity * l.product.price);
+            this.itemCount += l.quantidade;
+            this.cartPrice += (l.quantidade * l.product.preco);
         })
     }
 }
 
 export class CartLine {
     constructor(public product: Product | any,
-        public quantity: number) { }
+        public quantidade: number) { }
     get lineTotal() {
-        return this.quantity * this.product.price;
+        return this.quantidade * this.product.preco;
     }
+}
+
+export class CartItem {
+    constructor(
+        public produto_id: number,
+        public preco: number,
+        public quantidade: number,
+        public user_id?: number,
+    ){}
 }

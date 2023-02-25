@@ -1,0 +1,22 @@
+body {
+    background-color: #f2f2f2;
+    overflow: hidden;
+}
+
+h1 {
+    color: #8a94ad;
+}
+
+label {
+    color: #8a94ad;
+}
+
+.btn-primary {
+    background-color: #0D86FD;
+    border-color: #0D86FD;
+}
+
+.btn-primary:hover {
+    background-color: #0B6BC4;
+    border-color: #0B6BC4;
+}

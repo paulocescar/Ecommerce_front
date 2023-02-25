@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { Cart } from "../model/cart.model";
-import { ConnectionService } from "../model/connection.service";
+import { Cart } from "../../model/cart.model";
+import { ConnectionService } from "../../model/connection.service";
 
 @Component({
     templateUrl: "cartDetail.component.html"

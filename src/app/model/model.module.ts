@@ -11,10 +11,15 @@ import { ProductService } from "../services/product.service";
 import { CategoriesService } from "../services/categories.service";
 import { CategoriesRepository } from "./categories.repository";
 import { ConnectionService } from "./connection.service";
+import { CartService } from "../services/cart.service";
+import { CartRepository } from "./cart.repository";
 
 @NgModule({
     imports: [HttpClientModule],
     providers: [ProductRepository, Cart, Order, OrderRepository, 
-        RestDataSource, AuthService, ConnectionService, ProductService, CategoriesService, CategoriesRepository]
+        RestDataSource, AuthService, ConnectionService, 
+        ProductService, CategoriesService, CategoriesRepository,
+        CartService, CartRepository
+    ]
 })
 export class ModelModule { }

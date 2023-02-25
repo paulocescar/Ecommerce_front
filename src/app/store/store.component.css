@@ -1,15 +1,19 @@
 .t-1 {
     font-size: 1rem;
 }
+
 .t-1-2 {
     font-size: 1.2rem;
 }
+
 .t-1-3 {
     font-size: 1.3rem;
 }
+
 .t-1-4 {
     font-size: 1.45rem;
 }
+
 .t-1-5 {
     font-size: 1.5rem;
 }
@@ -29,15 +33,66 @@
 .t-5 {
     font-size: 5rem;
 }
-.float-left{
-    float: left!important;
-}
-.float-right{
-    float: right!important;
+
+.float-left {
+    float: left !important;
 }
 
-html , body{
+.float-right {
+    float: right !important;
+}
+
+html,
+body {
     overflow-x: hidden;
-    width: 100%!important;
+    width: 100% !important;
     background-color: #fff;
-  }
+}
+
+.card {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 0.25rem;
+    margin: 0 10px;
+    box-shadow: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.05);
+}
+
+.card:hover {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.15);
+}
+
+.card-img-top {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    color: #343a40;
+}
+
+.card-text {
+    color: #6c757d;
+}
+
+.btn-primary {
+    background-color: #0D86FD;
+    border-color: #0D86FD;
+    margin-top: 1rem;
+}
+
+.btn-primary:hover {
+    background-color: #0B6BC4;
+    border-color: #0B6BC4;
+}
+
+.btn-secondary {
+    background-color: #8a94ad;
+    border-color: #8a94ad;
+    margin-top: 1rem;
+}
+
+.btn-secondary:hover {
+    background-color: #6e7582;
+    border-color: #6e7582;
+}
